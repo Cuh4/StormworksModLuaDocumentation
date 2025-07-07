@@ -9,4 +9,5 @@ anyway.
 The following changelog entries are in DD/MM/YY format.
 
 ## 07/07/2025
+- Typo fixes and use enums instead of raw lua types where needed
 - Initial commit

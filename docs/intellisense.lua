@@ -8,7 +8,7 @@
 
     This extension is required: https://marketplace.visualstudio.com/items?itemName=sumneko.lua
 
-    CReated by: @Cuh4 (GitHub)
+    Created by: @Cuh4 (GitHub)
 
     Repo: https://github.com/Cuh4/StormworksModLuaDocumentation
 ]]
@@ -143,7 +143,7 @@ matrix = {}
 function matrix.multiply(matrix_a, matrix_b) end
 
 --[[
-    Multiples a 4-component value with a matrix.
+    Multiplies a 4-component value with a matrix.
 ]]
 ---@param matrix SWMatrix The matrix to multiply
 ---@param x number The X value to multiply
@@ -164,7 +164,7 @@ function matrix.multiplyxyzw(matrix, x, y, z, w) end
 function matrix.transpose(matrix) end
 
 --[[
-    Returns an identy matrix (an empty matrix essentially).
+    Returns an identity matrix (an empty matrix essentially).
 ]]
 ---@return SWMatrix matrix_out The resulting identity matrix
 function matrix.identity() end
@@ -452,7 +452,7 @@ function component.fluidContentsTransferVolume(index_src, index_dst, volume) end
 ]]
 ---@param index_src integer The index of source fluid contents volume
 ---@param index_dst integer The index of destination fluid contents volume
----@param fluid_type integer The ID of fluid type to exclude from transfer
+---@param fluid_type SWFluidType The ID of fluid type to exclude from transfer
 ---@param volume number The volume of fluid to move between fluid content volumes
 ---@return boolean success Returns true if the function completed successfully
 function component.fluidContentsTransferVolumeExceptType(index_src, index_dst, fluid_type, volume) end
@@ -461,7 +461,7 @@ function component.fluidContentsTransferVolumeExceptType(index_src, index_dst, f
     Sets a fluid type to a specified volume.
 ]]
 ---@param index integer The index of fluid contents volume
----@param fluid_type integer The ID of fluid type to set
+---@param fluid_type SWFluidType The ID of fluid type to set
 ---@param volume number The volume of fluid to set
 ---@return boolean success Returns true if the function completed successfully
 function component.fluidContentsSetFluidTypeVolume(index, fluid_type, volume) end
@@ -470,7 +470,7 @@ function component.fluidContentsSetFluidTypeVolume(index, fluid_type, volume) en
     Gets the volume of a particular fluid type.
 ]]
 ---@param index integer The index of fluid contents volume
----@param fluid_type integer The ID of fluid type to get
+---@param fluid_type SWFluidType The ID of fluid type to get
 ---@return number volume The volume of fluid type
 ---@return boolean success Returns true if the function completed successfully
 function component.fluidContentsGetFluidTypeVolume(index, fluid_type) end
@@ -518,7 +518,7 @@ function component.fluidContentsGetPressure(index) end
 function component.heaterSetSphere(offset_x, offset_y, offset_z, radius) end
 
 --[[
-    Sets a oriented box area of heater influence.
+    Sets an oriented box area of heater influence.
 ]]
 ---@param local_transform SWMatrix The local transform of box (TODO: needs factcheck! is this 100% a SWMatrix?)
 ---@param bounds_x number The size of box x-axis
@@ -569,7 +569,7 @@ function component.sfxPlayOnce(channel_index, effect_index, offset_x, offset_y, 
 ---@param radius_outer number The outer radius of sfx
 ---@param volume number The volume of sfx
 ---@param pitch number The pitch of sfx
----@param priority number The priority of sfx, lower priority sfx will be muted when active SFX count exceeds playback limit
+---@param priority number The priority of sfx, lower priority sfx will be muted when active sfx count exceeds playback limit
 ---@return boolean success Returns true if the function completed successfully
 function component.sfxPlayLoop(channel_index, effect_index, offset_x, offset_y,  offset_z, radius_inner, radius_outer, volume, pitch, priority) end
 
