@@ -60,7 +60,8 @@ function onParse() end
     This is the go-to callback for any component logic.<br>
     Rendering logic should be placed in `onRender()`
 ]]
-function onTick() end
+---@param tick_time number Unknown, TODO: find out 
+function onTick(tick_time) end
 
 --[[
     Called every frame.<br>
