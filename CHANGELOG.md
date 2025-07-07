@@ -9,5 +9,8 @@ anyway.
 The following changelog entries are in DD/MM/YY format.
 
 ## 07/07/2025
+- Added missing `debug.log` function
+- Added missing `tick_time` argument for `onTick` callback
+- Added link to modding documentation site
 - Typo fixes and use enums instead of raw lua types where needed
 - Initial commit
