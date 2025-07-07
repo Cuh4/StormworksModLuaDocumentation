@@ -11,6 +11,8 @@
     Created by: @Cuh4 (GitHub)
 
     Repo: https://github.com/Cuh4/StormworksModLuaDocumentation
+
+    See https://geometa.co.uk/wiki/stormworks/view/component_modding for information on modding.
 ]]
 
 ----------------------------------------
@@ -277,7 +279,7 @@ function matrix.rotationToFaceXZ(x, z) end
 ---| 4 # incendiary
 
 --[[
-    A table containing functions for this component.<br>
+    A table containing functions for this component.
 ]]
 component = {}
 
