@@ -730,3 +730,15 @@ function component.getSubmergenceFactor(offset_x, offset_y, offset_z, radius) en
 ---@return number wind_vel_z Velocity of wind in the z-axis
 ---@return boolean success Returns true if the function completed successfully
 function component.getWindVelocity() end
+
+----------------------------------------
+--- // Debug
+----------------------------------------
+
+--[[
+    Log a message to DebugView.
+    Requires [DebugView](https://learn.microsoft.com/en-us/sysinternals/downloads/debugview) to see the logs,
+    although a more modern version like [DebugView++](https://github.com/CobaltFusion/DebugViewPP) is recommended.
+]]
+---@param message string The string to log
+function debug.log(message) end
