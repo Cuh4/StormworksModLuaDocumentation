@@ -8,6 +8,9 @@ anyway.
 
 The following changelog entries are in DD/MM/YY format.
 
+## 09/07/2025
+- Added `SWCompositeData` class. Used in typing for all the composite functions.
+
 ## 07/07/2025
 - Added missing `debug.log` function
 - Added missing `tick_time` argument for `onTick` callback
