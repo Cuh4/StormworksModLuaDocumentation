@@ -232,6 +232,89 @@ function matrix.rotationToFaceXZ(x, z) end
 ----------------------------------------
 
 --[[
+    Represents bool values in composite data.
+]]
+---@class SWCompositeBools
+---@field [1] boolean
+---@field [2] boolean
+---@field [3] boolean
+---@field [4] boolean
+---@field [5] boolean
+---@field [6] boolean
+---@field [7] boolean
+---@field [8] boolean
+---@field [9] boolean
+---@field [10] boolean
+---@field [11] boolean
+---@field [12] boolean
+---@field [13] boolean
+---@field [14] boolean
+---@field [15] boolean
+---@field [16] boolean
+---@field [17] boolean
+---@field [18] boolean
+---@field [19] boolean
+---@field [20] boolean
+---@field [21] boolean
+---@field [22] boolean
+---@field [23] boolean
+---@field [24] boolean
+---@field [25] boolean
+---@field [26] boolean
+---@field [27] boolean
+---@field [28] boolean
+---@field [29] boolean
+---@field [30] boolean
+---@field [31] boolean
+---@field [32] boolean
+
+--[[
+    Represents number values in composite data.
+]]
+---@class SWCompositeFloats
+---@field [1] number
+---@field [2] number
+---@field [3] number
+---@field [4] number
+---@field [5] number
+---@field [6] number
+---@field [7] number
+---@field [8] number
+---@field [9] number
+---@field [10] number
+---@field [11] number
+---@field [12] number
+---@field [13] number
+---@field [14] number
+---@field [15] number
+---@field [16] number
+---@field [17] number
+---@field [18] number
+---@field [19] number
+---@field [20] number
+---@field [21] number
+---@field [22] number
+---@field [23] number
+---@field [24] number
+---@field [25] number
+---@field [26] number
+---@field [27] number
+---@field [28] number
+---@field [29] number
+---@field [30] number
+---@field [31] number
+---@field [32] number
+
+--[[
+    Represents composite data.<br>
+    `bool_values` holds boolean values for channels 1-32.<br>
+    `float_values` holds number values for channels 1-32.
+]]
+---@class SWCompositeData
+---@field bool_values SWCompositeBools
+---@field float_values SWCompositeFloats
+
+--[[
     Represents a fluid type.
 ]]
 ---@alias SWFluidType
@@ -320,7 +403,7 @@ function component.setOutputLogicSlotFloat(index, value) end
     Gets a table of composite data from an input composite logic slot.
 ]]
 ---@param index integer The index of logic slot
----@return table composite The table of composite data read from logic slot
+---@return SWCompositeData composite The composite data read from logic slot
 ---@return boolean success Returns true if the function completed successfully
 function component.getInputLogicSlotComposite(index) end
 
@@ -328,7 +411,7 @@ function component.getInputLogicSlotComposite(index) end
     Sets a table of composite data on an output composite logic slot.
 ]]
 ---@param index integer The index of logic slot
----@param composite table The table of composite data to write to logic slot
+---@param composite SWCompositeData The composite data to write to logic slot
 ---@return boolean success Returns true if the function completed successfully
 function component.setOutputLogicSlotComposite(index, composite) end
 
@@ -390,7 +473,7 @@ function component.slotTorqueSetBridgeRatio(index, ratio) end
 ---@param flow_factor number The proportion of flow between the fluid logic slot and fluid contents volume. Values < 1.0 restrict flow rate.
 ---@param is_one_way_in_to_slot boolean Prevents fluid from flowing from slot to volume when true.
 ---@param is_one_way_out_of_slot boolean Prevents fluid from flowing from volume to slot when true.
----@param filter SWFluidType A bitmask value corresponding to fluid types. Only fluid types with their bit set will flow.
+---@param filter integer A bitmask value corresponding to fluid types. Only fluid types with their bit set will flow.
 ---@param index_fluid_contents_transfer integer An optional index of fluid contents volume to store the fluids transferred as a result of this function call. Set to -1 if not required.
 ---@return boolean success Returns true if the function completed successfully
 function component.slotFluidResolveFlow(index, index_fluid_contents, pump_pressure, flow_factor, is_one_way_in_to_slot, is_one_way_out_of_slot, filter, index_fluid_contents_transfer) end
@@ -403,7 +486,7 @@ function component.slotFluidResolveFlow(index, index_fluid_contents, pump_pressu
 ---@param pump_pressure number The amount of pump pressure to apply between the fluid logic slots.
 ---@param flow_factor number The proportion of flow between the fluid logic slots. Values < 1.0 restrict flow rate.
 ---@param is_one_way boolean Prevents fluid from flowing backwards between slots when true.
----@param filter SWFluidType A bitmask value corresponding to fluid types. Only fluid types with their bit set will flow.
+---@param filter integer A bitmask value corresponding to fluid types. Only fluid types with their bit set will flow.
 ---@param index_fluid_contents_transfer integer An optional index of fluid contents volume to store the fluids transferred as a result of this function call. Set to -1 if not required.
 ---@return boolean success Returns true if the function completed successfully
 function component.slotFluidResolveFlowToSlot(index, index_other, pump_pressure, flow_factor, is_one_way, filter, index_fluid_contents_transfer) end
